@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate  } from 'react-router-dom';
+import './LoginForm.css';
 
 export default function LoginForm() {
   const navigate = useNavigate ();
@@ -101,7 +102,7 @@ export default function LoginForm() {
               />
               <p>Lembre-se de mim </p> {'  '}
             </label>
-            <a href="a">Esqueceu a senha?</a>
+            
           </fieldset>
           <button
             type="button"
@@ -109,6 +110,7 @@ export default function LoginForm() {
           >
             Acessar
           </button>
+          <a href="a">Esqueceu a senha?</a>
         </form>
       </main>
     )
