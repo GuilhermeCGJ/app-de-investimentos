@@ -1,4 +1,5 @@
 import React from 'react'
+import './StockDetails.css'
 
 export default function StockDetails (props) {
   const { stockCode,
