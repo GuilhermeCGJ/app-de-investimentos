@@ -4,6 +4,15 @@ import ExpContext from './ExpContext';
 
 function ExpProvider({ children }) {
   const [data, setData] = useState([]);
+  const [myStocks, setMyStocks] = useState([]);
+  const [marketPopup, setMarketPopup] = useState(false);
+  const [marketStock, setMarketStock] = useState({
+    code: '',
+    name: '',
+    amount: 0,
+    value: 0,
+  });
+  
 
   const getData=()=>{
     fetch('data.json'
@@ -28,6 +37,12 @@ function ExpProvider({ children }) {
         data,
         setData,
         getData,
+        marketStock,
+        setMarketStock,
+        myStocks,
+        setMyStocks,
+        marketPopup,
+        setMarketPopup,
       } }
     >
       {children}

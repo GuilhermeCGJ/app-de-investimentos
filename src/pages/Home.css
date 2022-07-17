@@ -1,0 +1,53 @@
+#home {
+  align-items: center;
+  display: flex;
+  justify-content:  center;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.infos {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  max-width: 500px;
+  min-width: 250px;
+  width: 95vw;
+  margin-bottom: 1px;
+}
+
+.info-box {
+  border-radius: 10px;
+  background-color: rgb(199, 211, 192);
+}
+
+.code-box {
+  background-color: yellowgreen;
+  font-weight: bold;
+  margin-right: 2px;
+  min-width: 70px;
+  width: 20vw;
+}
+
+.amount-box {
+  background-color: lightgray;
+  font-weight: bold;
+  margin-right: 2px;
+  min-width: 50px;
+  width: 10vw;
+}
+
+.value-box {
+  background-color: lightgreen;
+  font-weight: bold;
+  min-width: 110px;
+  width: 30vw;
+}
+
+.trade-box {
+  background-color: rgb(175, 185, 154);
+  font-weight: bold;
+  margin-left: 2px;
+  min-width: 90px;
+  width: 30vw;
+}

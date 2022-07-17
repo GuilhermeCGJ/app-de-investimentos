@@ -5,7 +5,7 @@ import './Login.css'
 export default function Login () {
 
   return (
-    <div id='Login'>
+    <div id='login'>
       <LoginForm />
     </div>
   )
