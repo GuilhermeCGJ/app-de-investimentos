@@ -1,0 +1,102 @@
+[
+    {
+      "code": "TSLA",
+      "name": "Tesla Inc",
+      "value": "719.21"
+    },
+    {
+      "code": "AAPL",
+      "name": "Apple Inc",
+      "value": "149.15"
+    },
+    {
+      "code": "AMZN",
+      "name": "Amazon.com Inc",
+      "value": "115.17"
+    },
+    {
+      "code": "MSFT",
+      "name": "Microsoft Corporation",
+      "value": "255.80"
+    },
+    {
+      "code": "AMD",
+      "name": "Advanced Micro Devices Inc",
+      "value": "80.69"
+    },
+    {
+      "code": "NVDA",
+      "name": "NVIDIA Corporation",
+      "value": "156.29"
+    },
+    {
+      "code": "BABA",
+      "name": "Alibaba Group Holdings Ltd ADR",
+      "value": "101.74"
+    },
+    {
+      "code": "META",
+      "name": "Meta Platforms Inc",
+      "value": "164.59"
+    },
+    {
+      "code": "NFLX",
+      "name": "Netflix Inc",
+      "value": "187.76"
+    },
+    {
+      "code": "COST",
+      "name": "Costco Wholesale Corp",
+      "value": "521.05"
+    },
+    {
+      "code": "PINS",
+      "name": "Pinterest Inc",
+      "value": "20.57"
+    },
+    {
+      "code": "INTC",
+      "name": "Intel Corporation",
+      "value": "38.30"
+    },
+    {
+      "code": "ADBE",
+      "name": "Adobe Systems Incorporated",
+      "value": "377.42"
+    },
+    {
+      "code": "WMT",
+      "name": "Walmart Inc",
+      "value": "129.02"
+    },
+    {
+      "code": "PYPL",
+      "name": "PayPal Holdings Inc",
+      "value": "73.54"
+    },
+    {
+      "code": "PFE",
+      "name": "Pfizer Inc",
+      "value": "51.50"
+    },
+    {
+      "code": "QCOM",
+      "name": "Qualcomm Incorporated",
+      "value": "142.94"
+    },
+    {
+      "code": "TSM",
+      "name": "Taiwan Semiconductor Manufacturing",
+      "value": "85.55"
+    },
+    {
+      "code": "SNOW",
+      "name": "Snowflake Inc",
+      "value": "148.75"
+    },
+    {
+      "code": "SHOP",
+      "name": "Shopify Inc",
+      "value": "31.30"
+    }
+]
