@@ -61,7 +61,6 @@ export default function LoginForm() {
     };
 
     return (
-      <main>
         <form>
           <fieldset>
             <input
@@ -112,6 +111,5 @@ export default function LoginForm() {
           </button>
           <a href="a">Esqueceu a senha?</a>
         </form>
-      </main>
     )
   }
