@@ -105,6 +105,7 @@ export default function LoginForm() {
           </fieldset>
           <button
             type="button"
+            id='login-button'
             onClick={handleSubmit}
           >
             Acessar

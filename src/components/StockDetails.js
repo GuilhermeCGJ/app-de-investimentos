@@ -1,6 +1,5 @@
 import React, { useContext } from 'react'
 import ExpContext from '../context/ExpContext';
-import './StockDetails.css'
 
 export default function StockDetails (props) {
   const { stockCode,

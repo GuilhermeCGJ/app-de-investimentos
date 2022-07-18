@@ -33,7 +33,7 @@ small {
   color: rgb(187, 255, 0);
 }
 
-button{
+#login-button {
   background-color: greenyellow;
   border: none;
   border-radius: 5px;
@@ -74,10 +74,4 @@ a {
 #remember {
   flex: 1;
   margin-right: 4px;
-}
-
-@media screen and (max-width: 992px) {
-  main {
-    height: 100vh;
-  }
 }
