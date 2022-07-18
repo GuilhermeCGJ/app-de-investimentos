@@ -20,7 +20,7 @@ function ExpProvider({ children }) {
   })
   
 
-  const getData=()=>{
+  const getData = () => {
     fetch('data.json'
     ,{
       headers : { 
@@ -37,6 +37,51 @@ function ExpProvider({ children }) {
   
   }
 
+  const handleBuy = (value) => {
+    let newAmount = parseFloat(marketStock.amount) + parseFloat(value);
+        console.log(newAmount);
+        if (marketStock.has) {
+          const index = myStocks.map(object => object.code).indexOf(marketStock.code);
+          let newValue = myStocks;
+          newValue[index] = {
+            code: marketStock.code,
+            name: marketStock.name,
+            amount: newAmount,
+            value: marketStock.value,
+            has: marketStock.has
+          };
+          setMyStocks(newValue);
+        } else {
+          
+          if (myStocks) {
+            let newStocks = myStocks;
+            newStocks.push({
+              code: marketStock.code,
+              name: marketStock.name,
+              amount: newAmount,
+              value: marketStock.value,
+              has: true,
+            })
+            setMyStocks(newStocks);
+          } else {
+            setMyStocks({
+              code: marketStock.code,
+              name: marketStock.name,
+              amount: newAmount,
+              value: marketStock.value,
+              has: true,
+            })
+          }
+        }
+        setMarketStock({
+          code: marketStock.code,
+          name: marketStock.name,
+          amount: newAmount,
+          value: marketStock.value,
+          has: true,
+        })
+  }
+
   return (
     <ExpContext.Provider
       value={ {
@@ -51,6 +96,7 @@ function ExpProvider({ children }) {
         setMarketPopup,
         user,
         setUser,
+        handleBuy,
       } }
     >
       {children}

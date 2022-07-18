@@ -3,7 +3,7 @@ import ExpContext from '../context/ExpContext';
 
 export default function StockDetails (props) {
   const { stockCode, stockName,
-    stockValue, has } = props;
+    stockValue, stockAmount, has } = props;
 
   const {
     setMarketPopup, setMarketStock
@@ -13,7 +13,7 @@ export default function StockDetails (props) {
     setMarketStock({
       code: stockCode,
       name: stockName,
-      amount: 0,
+      amount: stockAmount,
       value: stockValue,
       has: has,
     });
@@ -26,7 +26,7 @@ export default function StockDetails (props) {
         <p> {stockCode} </p>
       </div>
       <div className='info-box amount-box'> 
-        <p> 1 </p>
+        <p> { stockAmount } </p>
       </div>
       <div className='info-box value-box'> 
         <p> {stockValue} </p>

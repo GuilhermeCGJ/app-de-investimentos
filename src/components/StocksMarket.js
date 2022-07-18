@@ -7,9 +7,10 @@ export default function StocksMarket () {
   const {
     setMarketPopup,
     marketStock,
-    setMarketStock,
-    myStocks,
-    setMyStocks,
+    // setMarketStock,
+    // myStocks,
+    // setMyStocks,
+    handleBuy,
     } = useContext(ExpContext);
 
   const [buy, setBuy] = useState({
@@ -47,55 +48,9 @@ export default function StocksMarket () {
       alert('Valores incorretos');
     } else {
       if (buy.value > 0) {
-        let newAmount = parseFloat(marketStock.amount) + parseFloat(buy.value);
-        console.log(newAmount);
-        if (marketStock.has) {
-          const index = myStocks.map(object => object.code).indexOf(marketStock.code);
-          console.log(index);
-          let newValue = myStocks;
-          console.log(newValue);
-          newValue[0] = {
-            code: marketStock.code,
-            name: marketStock.name,
-            amount: newAmount,
-            value: marketStock.value,
-            has: marketStock.has
-          };
-          console.log(newValue);
-          setMyStocks(newValue);
-          console.log(myStocks);
-        } else {
-          
-          if (myStocks) {
-            let newStocks = myStocks;
-            newStocks.push({
-              code: marketStock.code,
-              name: marketStock.name,
-              amount: newAmount,
-              value: marketStock.value,
-              has: true,
-            })
-            setMyStocks(newStocks);
-          } else {
-            setMyStocks({
-              code: marketStock.code,
-              name: marketStock.name,
-              amount: newAmount,
-              value: marketStock.value,
-              has: true,
-            })
-          }
-        }
-        setMarketStock({
-          code: marketStock.code,
-          name: marketStock.name,
-          amount: newAmount,
-          value: marketStock.value,
-          has: true,
-        })
+        handleBuy(buy.value);
       }
     }
-    console.log(myStocks);
   };
 
   const handleClose = () => {
@@ -124,7 +79,7 @@ export default function StocksMarket () {
             <p> {marketStock.code} </p>
           </div>
           <div className='info-box amount-box'> 
-            <p> 1 </p>
+            <p> {marketStock.amount} </p>
           </div>
           <div className='info-box value-box'> 
             <p> {marketStock.value} </p>

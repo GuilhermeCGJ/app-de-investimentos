@@ -31,7 +31,8 @@ export default function Home () {
         <div className='title'>
           <h5>Minhas Ações</h5>
         </div>
-        { myStocks.length > 0 ? <MyStocksArea /> : <div className='stocks-area'><h3> Você não tem ações </h3></div >}
+        
+        { myStocks.length > 0 ? <><StocksHeader /> <MyStocksArea /></> : <div className='stocks-area'><h3> Você não tem ações </h3></div >}
         
         <div className='title'>
           <h5>Disponíveis para investir</h5>

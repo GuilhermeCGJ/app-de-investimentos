@@ -14,6 +14,7 @@ export default function AvailableStocks () {
           key={ index }
           index={ index }
           stockCode={ data.code }
+          stockAmount={ data.amount}
           stockName={ data.name }
           stockValue={ data.value }
           has={ false }
