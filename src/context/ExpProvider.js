@@ -11,7 +11,13 @@ function ExpProvider({ children }) {
     name: '',
     amount: 0,
     value: 0,
+    has: false,
   });
+  const [user, setUser] = useState({
+    email: '',
+    lastAcess:'',
+    stocks: [],
+  })
   
 
   const getData=()=>{
@@ -43,6 +49,8 @@ function ExpProvider({ children }) {
         setMyStocks,
         marketPopup,
         setMarketPopup,
+        user,
+        setUser,
       } }
     >
       {children}

@@ -2,14 +2,21 @@ import React, { useContext } from 'react'
 import ExpContext from '../context/ExpContext';
 
 export default function StockDetails (props) {
-  const { stockCode,
+  const { stockCode, stockName,
     stockValue, has } = props;
 
   const {
-    setMarketPopup,
+    setMarketPopup, setMarketStock
     } = useContext(ExpContext);
 
   const handleClick = () => {
+    setMarketStock({
+      code: stockCode,
+      name: stockName,
+      amount: 0,
+      value: stockValue,
+      has: has,
+    });
     setMarketPopup(true);
   };
 

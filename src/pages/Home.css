@@ -83,10 +83,56 @@
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  margin-bottom: 1px;
+  margin-bottom: 3px;
 }
 
 .bg-gray {
   background-color: lightgray;
   border-radius: 5px;
+}
+
+.trade-stock {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-bottom: 1px;
+}
+
+.buy-wrapper {
+  background-color: lightskyblue;
+  border-radius: 15px;
+}
+
+.sell-wrapper {
+  background-color: lightgreen;
+  border-radius: 15px;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.trade-options input {
+  width: 45px;
+  height: 42px;
+  line-height: 1.65;
+  float: right;
+  display: block;
+  padding: 0;
+  margin: 0;
+  padding-left: 20px;
+  border: 1px solid #eee;
+}
+
+.stocks-view-area{
+  max-width: 500px;
+  min-width: 250px;
+  width: 95vw;
+  margin-bottom: 1px;
 }
