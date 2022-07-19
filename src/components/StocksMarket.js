@@ -7,9 +7,6 @@ export default function StocksMarket () {
   const {
     setMarketPopup,
     marketStock,
-    // setMarketStock,
-    // myStocks,
-    // setMyStocks,
     handleBuy,
     } = useContext(ExpContext);
 

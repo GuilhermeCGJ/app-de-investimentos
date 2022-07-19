@@ -1,0 +1,88 @@
+#transactions {
+  display: flex;
+  flex-direction: column;
+  height: 60vh;
+  justify-content: space-around;
+}
+
+#deposit-and-withdrawal {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#balance {
+  background-color: lightgray;
+  height: 5vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-weight: bolder;
+}
+
+.choose-transaction {
+  height: 10vh;
+}
+
+.choose-transaction div {
+  float: left;
+  margin: 0 5px 0 0;
+  width: 100px;
+  height: 40px;
+  position: relative;
+}
+
+.choose-transaction label,
+.choose-transaction input {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.choose-transaction input[type="radio"] {
+  opacity: 0.01;
+  z-index: 100;
+}
+
+.deposit input[type="radio"]:checked+label,
+.Checked+label {
+  background: yellow;
+}
+
+.withdrawal input[type="radio"]:checked+label,
+.Checked+label {
+  background: greenyellow;
+}
+
+.choose-transaction label {
+  padding: 5px;
+  border: 1px solid #CCC;
+  cursor: pointer;
+  z-index: 90;
+}
+
+.choose-transaction label:hover {
+  background: #DDD;
+}
+
+.money-wrapper {
+  position: relative;
+}
+
+.money-wrapper input {
+  height: 10px;
+  width: 150px;
+}
+
+.money-wrapper label {
+  position: absolute;
+  font-size: large;
+  font-weight: bold;
+  top: 10px;
+  left: 5px;
+}

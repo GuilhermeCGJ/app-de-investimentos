@@ -16,6 +16,7 @@ function ExpProvider({ children }) {
   const [user, setUser] = useState({
     email: '',
     lastAcess:'',
+    money: 0,
     stocks: [],
   })
   

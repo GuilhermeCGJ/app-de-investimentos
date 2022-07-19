@@ -1,5 +1,6 @@
 import React from 'react'
 import { useEffect, useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
 import AvailableStocksArea from '../components/AvailableStocksArea';
 import MyStocksArea from '../components/MyStocksArea';
 import StocksMarket from '../components/StocksMarket';
@@ -9,6 +10,7 @@ import './Home.css';
 
 export default function Home () {
 
+  const navigate = useNavigate ();
   const {
     getData,
     marketPopup,
@@ -21,7 +23,9 @@ export default function Home () {
     getData();
   }, []);
 
-
+  const handleClick = () => {
+    navigate("../transactions", { replace: true })
+  };
   
 
   return (
@@ -40,7 +44,10 @@ export default function Home () {
         <StocksHeader />
         <AvailableStocksArea />
       </div>
-      <button className='home-button'>
+      <button
+        className='home-button'
+        onClick= { handleClick }
+      >
         Depósito/Retirada
       </button>
     </div>
