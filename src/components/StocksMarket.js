@@ -1,7 +1,6 @@
 import React from 'react'
 import { useContext, useState } from 'react';
 import ExpContext from '../context/ExpContext';
-import './StockMarket.css';
 
 export default function StocksMarket () {
   const {

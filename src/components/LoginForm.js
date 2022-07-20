@@ -1,12 +1,10 @@
 import React, { useContext, useState } from 'react';
 import { useNavigate  } from 'react-router-dom';
 import ExpContext from '../context/ExpContext';
-import './LoginForm.css';
 
 export default function LoginForm() {
   const {
     setUser,
-    user,
   } = useContext(ExpContext);
   const navigate = useNavigate ();
   const [email, setEmail] = useState({
@@ -120,12 +118,11 @@ export default function LoginForm() {
           </fieldset>
           <button
             type="button"
-            id='login-button'
+            className="login-button"
             onClick={handleSubmit}
           >
             Acessar
           </button>
-          <a href="a">Esqueceu a senha?</a>
         </form>
     )
   }
