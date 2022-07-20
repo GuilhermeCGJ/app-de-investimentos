@@ -38,9 +38,35 @@ function ExpProvider({ children }) {
   
   }
 
+  const storedInfos = () => {
+    const stored = localStorage.getItem("users");
+    const response = JSON.parse(stored);
+    if ( response ) {
+      const date = new Date();
+      const now = `${date.getDate()}/${date.getMonth()+1}/${date.getFullYear()} - 
+        ${date.getHours()}h${date.getMinutes()}m${date.getSeconds()}s`;
+      setUser({
+        email: response.email,
+        lastAcess: now,
+        money: response.money,
+        stocks: response.stocks,
+      });
+      setMyStocks([response.stocks]);
+    } else {
+      localStorage.setItem("users",JSON.stringify(user));
+    }
+  };
+
+  const updateLocalStorage = () => {
+    const stored = localStorage.getItem("users");
+    const response = JSON.parse(stored);
+    if ( response ) {
+    localStorage.setItem("users",JSON.stringify(user));
+    };
+  };
+
   const handleBuy = (value) => {
     let newAmount = parseFloat(marketStock.amount) + parseFloat(value);
-        console.log(newAmount);
         if (marketStock.has) {
           const index = myStocks.map(object => object.code).indexOf(marketStock.code);
           let newValue = myStocks;
@@ -53,7 +79,6 @@ function ExpProvider({ children }) {
           };
           setMyStocks(newValue);
         } else {
-          
           if (myStocks) {
             let newStocks = myStocks;
             newStocks.push({
@@ -98,6 +123,8 @@ function ExpProvider({ children }) {
         user,
         setUser,
         handleBuy,
+        storedInfos,
+        updateLocalStorage,
       } }
     >
       {children}

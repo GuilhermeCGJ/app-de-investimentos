@@ -60,9 +60,11 @@ export default function LoginForm() {
         alert('E-mail ou senha inválida');
       } else {
         const date = new Date();
+        const now = `${date.getDate()}/${date.getMonth()+1}/${date.getFullYear()} - 
+        ${date.getHours()}h${date.getMinutes()}m${date.getSeconds()}s`;
         setUser({
           email: email.value,
-          lastAcess: `${date.getDate()}/${date.getMonth()+1}/${date.getFullYear()}`,
+          lastAcess: now,
           money: 0,
           stocks: [],
         });

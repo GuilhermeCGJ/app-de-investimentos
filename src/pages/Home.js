@@ -16,13 +16,34 @@ export default function Home () {
     getData,
     marketPopup,
     myStocks,
+    storedInfos,
+    user,
+    setUser,
+    updateLocalStorage,
     } = useContext(ExpContext);
 
 
 
   useEffect(() => {
     getData();
+    storedInfos();
   }, []);
+
+  useEffect(() => {
+    console.log('atualizou')
+    updateLocalStorage();
+  }, [user]);
+
+  useEffect(() => {
+    console.log(myStocks);
+    setUser({
+      email: user.email,
+      lastAcess: user.lastAcess,
+      money: user.money,
+      stocks: myStocks,
+    });
+    console.log(user);
+  }, [marketPopup]);
 
   const handleClick = () => {
     navigate("../transactions", { replace: true })
