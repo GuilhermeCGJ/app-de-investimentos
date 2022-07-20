@@ -1,8 +1,13 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { useNavigate  } from 'react-router-dom';
+import ExpContext from '../context/ExpContext';
 import './LoginForm.css';
 
 export default function LoginForm() {
+  const {
+    setUser,
+    user,
+  } = useContext(ExpContext);
   const navigate = useNavigate ();
   const [email, setEmail] = useState({
     value: '',
@@ -56,6 +61,16 @@ export default function LoginForm() {
       if (email.hasError || password.hasError) {
         alert('E-mail ou senha inválida');
       } else {
+        const date = new Date();
+        setUser({
+          email: email.value,
+          lastAcess: `${date.getDate()}/${date.getMonth()+1}/${date.getFullYear()}`,
+          money: 0,
+          stocks: [],
+        });
+        if ( remember === true ) {
+          localStorage.setItem("remember",JSON.stringify(email.value));
+        }
         navigate("../home", { replace: true })
       }
     };
@@ -74,7 +89,7 @@ export default function LoginForm() {
             {email.wasTouched && email.hasError && <small>{email.error}</small>}
           </fieldset>
           <fieldset className='password-wrapper'>
-          <input
+            <input
               type={showPassword ? 'text' : 'password'}
               name="password"
               placeholder="Senha"

@@ -7,6 +7,7 @@ import StocksMarket from '../components/StocksMarket';
 import StocksHeader from '../components/StocksHeader';
 import ExpContext from '../context/ExpContext';
 import './Home.css';
+import Header from '../components/Header';
 
 export default function Home () {
 
@@ -30,6 +31,7 @@ export default function Home () {
 
   return (
     <div id='home'>
+      <Header />
       { marketPopup && <StocksMarket /> }
       <div className='stocks-view-area'>
         <div className='title'>

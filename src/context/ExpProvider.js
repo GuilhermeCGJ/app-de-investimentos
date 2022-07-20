@@ -18,7 +18,7 @@ function ExpProvider({ children }) {
     lastAcess:'',
     money: 0,
     stocks: [],
-  })
+  });
   
 
   const getData = () => {
