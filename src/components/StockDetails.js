@@ -1,4 +1,5 @@
 import React, { useContext } from 'react'
+import { AiOutlineDown } from 'react-icons/ai';
 import ExpContext from '../context/ExpContext';
 
 export default function StockDetails (props) {
@@ -35,7 +36,7 @@ export default function StockDetails (props) {
         className='info-box trade-box'
         onClick={handleClick}
       > 
-        <img src='../../public/icons/buy.svg' alt='buy icon' />
+        <AiOutlineDown />
         <img src={ has ? '../../public/icons/sell.svg' : '../../public/icons/graySell.svg'} alt='sell icon' />
       </div>
     </div>
