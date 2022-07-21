@@ -30,19 +30,16 @@ export default function Home () {
   }, []);
 
   useEffect(() => {
-    console.log('atualizou')
     updateLocalStorage();
   }, [user]);
 
   useEffect(() => {
-    console.log(myStocks);
     setUser({
       email: user.email,
       lastAcess: user.lastAcess,
       money: user.money,
       stocks: myStocks,
     });
-    console.log(user);
   }, [marketPopup]);
 
   const handleClick = () => {

@@ -51,6 +51,7 @@ function ExpProvider({ children }) {
         money: response.money,
         stocks: response.stocks,
       });
+      if ( typeof response.stocks ==! "array")
       setMyStocks([response.stocks]);
     } else {
       localStorage.setItem("users",JSON.stringify(user));
@@ -66,7 +67,52 @@ function ExpProvider({ children }) {
   };
 
   const handleBuy = (value) => {
-    let newAmount = parseFloat(marketStock.amount) + parseFloat(value);
+    if (marketStock.has) {
+      const index = myStocks.map(object => object.code).indexOf(marketStock.code);
+      let newValue = myStocks;
+      let newAmount = parseFloat(newValue[index].amount) + parseFloat(value);
+      newValue[index] = {
+        code: marketStock.code,
+        name: marketStock.name,
+        amount: newAmount,
+        value: marketStock.value,
+        has: marketStock.has
+      };
+      setMyStocks(newValue);
+    } else {
+      let newAmount = parseFloat(value);
+      if (myStocks) {
+        let newStocks = myStocks;
+        newStocks.push({
+          code: marketStock.code,
+          name: marketStock.name,
+          amount: newAmount,
+          value: marketStock.value,
+          has: true,
+        })
+        setMyStocks(newStocks);
+      } else {
+        setMyStocks({
+          code: marketStock.code,
+          name: marketStock.name,
+          amount: newAmount,
+          value: marketStock.value,
+          has: true,
+        })
+      }
+    }
+    let newAmount = parseFloat(marketStock.amount) - parseFloat(value);
+    setMarketStock({
+      code: marketStock.code,
+      name: marketStock.name,
+      amount: newAmount,
+      value: marketStock.value,
+      has: true,
+    })
+  }
+
+  const handleSell = (value) => {
+    let newAmount = parseFloat(marketStock.amount) - parseFloat(value);
         if (marketStock.has) {
           const index = myStocks.map(object => object.code).indexOf(marketStock.code);
           let newValue = myStocks;
@@ -123,6 +169,7 @@ function ExpProvider({ children }) {
         user,
         setUser,
         handleBuy,
+        handleSell,
         storedInfos,
         updateLocalStorage,
       } }

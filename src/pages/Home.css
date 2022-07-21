@@ -160,3 +160,8 @@ input[type=number] {
   border: 1px solid #999;
   overflow: auto;
 }
+
+.user-infos {
+  display: flex;
+  flex-direction: row;
+}

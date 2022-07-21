@@ -7,6 +7,7 @@ export default function StocksMarket () {
     setMarketPopup,
     marketStock,
     handleBuy,
+    user,
     } = useContext(ExpContext);
 
   const [buy, setBuy] = useState({
@@ -56,6 +57,10 @@ export default function StocksMarket () {
   return (
     <div className="stock-market">
       <div className="market-box">
+        <div className="user-infos">
+          <h3>{`Usuário: ${user.email}`}</h3>
+          <h3>{`Saldo: ${user.money}`}</h3>
+        </div>
         <div className='trade-title'>
           <h1>Comprar/Vender Ação</h1>
         </div>
