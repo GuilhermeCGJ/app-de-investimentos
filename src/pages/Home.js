@@ -20,6 +20,7 @@ export default function Home () {
     user,
     setUser,
     updateLocalStorage,
+    // deleteInData,
     } = useContext(ExpContext);
 
 
@@ -40,6 +41,7 @@ export default function Home () {
       money: user.money,
       stocks: myStocks,
     });
+    // deleteInData();
   }, [marketPopup]);
 
   const handleClick = () => {

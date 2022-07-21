@@ -13,7 +13,7 @@ export default function StockDetails (props) {
     setMarketStock({
       code: stockCode,
       name: stockName,
-      amount: stockAmount,
+      amount: 1,
       value: stockValue,
       has: has,
     });
