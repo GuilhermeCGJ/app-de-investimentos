@@ -1,5 +1,6 @@
 import React, { useContext, useState } from 'react';
 import { useNavigate  } from 'react-router-dom';
+import { BsEye, BsEyeSlash } from 'react-icons/bs';
 import ExpContext from '../context/ExpContext';
 
 export default function LoginForm() {
@@ -96,12 +97,16 @@ export default function LoginForm() {
               value={password.value}
               onChange={handleChange}
             />
-            <input
+            
+            {showPassword ? <BsEyeSlash
               className="show-password-input"
-              type="checkbox"
-              checked={showPassword}
-              onChange={(e) => setShowPassword(!showPassword)}
+              onClick={(e) => setShowPassword(!showPassword)}
+            /> :
+            <BsEye
+              className="show-password-input"
+              onClick={(e) => setShowPassword(!showPassword)}
             />
+            }
             <br />
             {password.wasTouched && password.hasError && <small>{password.error}</small>}
           </fieldset>

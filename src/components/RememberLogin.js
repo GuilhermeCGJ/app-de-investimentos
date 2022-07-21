@@ -34,7 +34,7 @@ export default function RememberLogin() {
         Acessar
       </button>
       <p onClick={ handleQuit }>
-        Essa não é a sua conta? <small> Clique aqui para fazer login com outra conta</small>
+        Essa não é a sua conta? <small> Clique aqui </small>para fazer login com outra conta
       </p>
     </div>
   )
