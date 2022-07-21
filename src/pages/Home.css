@@ -110,8 +110,11 @@
 
 
 .buy-wrapper {
-  background-color: lightskyblue;
+  background-color: rgb(250, 135, 135);
   border-radius: 15px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
 }
 
 input[type=number]::-webkit-inner-spin-button,
@@ -126,16 +129,19 @@ input[type=number] {
 
 .market-box {
   position: relative;
-  width: 70%;
+  width: 80vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
   max-width: 400px;
   margin: 0 auto;
-  height: auto;
+  height: 50vh;
   max-height: 70vh;
   margin-top: calc(100vh - 85vh - 20px);
-  background: #fff;
-  border-radius: 4px;
+  background: #E7F6F2;
+  border-radius: 15px;
   padding: 20px;
-  border: 1px solid #999;
+  border: 1px solid rgb(114, 114, 114);
   overflow: auto;
 }
 
@@ -188,4 +194,44 @@ input[type=number] {
 .user-infos {
   display: flex;
   flex-direction: row;
+  background-color: #A5C9CA;
+  border-radius: 15px;
+  height: 5vh;
+  padding-top: 5px;
+}
+
+.stock-infos {
+  display: flex;
+  flex-direction: column;
+  background-color: #A5C9CA;
+  border-radius: 15px;
+  height: 5vh;
+  padding-top: 5px;
+}
+
+.user-area {
+  position: fixed;
+  background: #00000050;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+}
+
+.user-box {
+  position: relative;
+  width: 80vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  max-width: 400px;
+  margin: 0 auto;
+  height: 50vh;
+  max-height: 70vh;
+  margin-top: calc(100vh - 85vh - 20px);
+  background: #E7F6F2;
+  border-radius: 15px;
+  padding: 20px;
+  border: 1px solid rgb(114, 114, 114);
+  overflow: auto;
 }

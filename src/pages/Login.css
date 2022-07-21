@@ -1,9 +1,10 @@
 #login {
   align-items: center;
   display: flex;
-  justify-content:  center;
+  justify-content:  inherit;
   min-height: 100vh;
   background-color: #395B64;
+  flex-direction: column;
 }
 
 #remember-login {
@@ -98,4 +99,10 @@ a {
 #remember {
   flex: 1;
   margin-right: 4px;
+}
+
+img{
+  width: 250px;
+  margin-top: 5vh;
+  margin-bottom: 5vh;
 }

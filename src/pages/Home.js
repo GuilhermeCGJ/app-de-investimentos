@@ -8,6 +8,7 @@ import StocksHeader from '../components/StocksHeader';
 import ExpContext from '../context/ExpContext';
 import './Home.css';
 import Header from '../components/Header';
+import UserArea from './UserArea';
 
 export default function Home () {
 

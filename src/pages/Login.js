@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import LoginForm from '../components/LoginForm'
 import RememberLogin from '../components/RememberLogin';
+import logo from '../components/ExpLogo.png';
 import './Login.css'
 
 export default function Login () {
@@ -19,6 +20,7 @@ export default function Login () {
 
   return (
     <div id='login'>
+      <img src={logo} alt="logo"/>
       { hasRemember ? <RememberLogin /> : <LoginForm />}
       
     </div>

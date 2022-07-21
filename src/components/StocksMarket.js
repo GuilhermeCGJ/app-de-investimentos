@@ -92,32 +92,34 @@ export default function StocksMarket () {
           <h3>{`Saldo: ${user.money.toFixed(2)}`}</h3>
         </div>
         <div className="stock-infos">
-          <h3>{`Suas ações dessa empresa: ${invested.amount}`}</h3>
-          <h3>{`Valor investido nessa empresa: ${invested.value.toFixed(2)}`}</h3>
+          <h3>{`Ações dessa empresa: ${invested.amount}`}</h3>
+          <h3>{`Montante investido: ${invested.value.toFixed(2)}`}</h3>
         </div>
         <div className='trade-title'>
           <h1>Comprar/Vender Ação</h1>
         </div>
-        <div className='stocks-header'>
-          <div className='info-box code-box bg-gray'> 
-            <p> Código </p>
+        <div>
+          <div className='stocks-header'>
+            <div className='info-box code-box bg-gray'> 
+              <p> Código </p>
+            </div>
+            <div className='info-box amount-box bg-gray'> 
+              <p> Qtde </p>
+            </div>
+            <div className='info-box value-box bg-gray'> 
+              <p> Valor (R$) </p>
+            </div>
           </div>
-          <div className='info-box amount-box bg-gray'> 
-            <p> Qtde </p>
-          </div>
-          <div className='info-box value-box bg-gray'> 
-            <p> Valor (R$) </p>
-          </div>
-        </div>
-        <div className='trade-stock'>
-          <div className='info-box code-box'> 
-            <p> {marketStock.code} </p>
-          </div>
-          <div className='info-box amount-box'> 
-            <p> {toBuy} </p>
-          </div>
-          <div className='info-box value-box'> 
-            <p> {marketStock.value} </p>
+          <div className='trade-stock'>
+            <div className='info-box code-box'> 
+              <p> {marketStock.code} </p>
+            </div>
+            <div className='info-box amount-box'> 
+              <p> {toBuy} </p>
+            </div>
+            <div className='info-box value-box'> 
+              <p> {marketStock.value} </p>
+            </div>
           </div>
         </div>
         <div className='trade-options'>

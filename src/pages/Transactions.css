@@ -1,8 +1,10 @@
 #transactions {
   display: flex;
   flex-direction: column;
-  height: 60vh;
-  justify-content: space-around;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background-color: #395B64;
 }
 
 #deposit-and-withdrawal {
@@ -10,16 +12,18 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  height: 50vh;
 }
 
 #balance {
-  background-color: lightgray;
-  height: 5vh;
+  background-color: #A5C9CA;
+  height: 10vh;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   font-weight: bolder;
+  border-radius: 15px;
 }
 
 .choose-transaction {
@@ -61,13 +65,13 @@
 
 .choose-transaction label {
   padding: 5px;
-  border: 1px solid #CCC;
+  border: 1px solid #A5C9CA;
   cursor: pointer;
   z-index: 90;
 }
 
 .choose-transaction label:hover {
-  background: #DDD;
+  background: #A5C9CA;
 }
 
 .money-wrapper {
@@ -85,4 +89,20 @@
   font-weight: bold;
   top: 10px;
   left: 5px;
+}
+
+.transactions-box {
+  background-color: #E7F6F2;
+  width: 95vw;
+  height: 60vh;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  border-radius: 15px;
+}
+
+.return-icon {
+  position: absolute;
+  left: -2px;
+  top: 0;
 }
