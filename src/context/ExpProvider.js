@@ -56,8 +56,6 @@ function ExpProvider({ children }) {
         money: response.money,
         stocks: response.stocks,
       });
-      if ( typeof response.stocks ==! "array")
-      setMyStocks([response.stocks]);
     } else {
       localStorage.setItem("users",JSON.stringify(user));
     }
@@ -80,7 +78,7 @@ function ExpProvider({ children }) {
       newValue[index] = {
         code: marketStock.code,
         name: marketStock.name,
-        amount: marketStock.amount,
+        amount: newAmount,
         value: marketStock.value,
         has: true,
       };
@@ -147,6 +145,13 @@ function ExpProvider({ children }) {
       value: marketStock.value,
       has: true,
     })
+    const cost = parseFloat(user.money) -(parseFloat(marketStock.value) * parseFloat(value));
+    setUser({
+      email: user.email,
+      lastAcess: user.lastAcess,
+      money: cost,
+      stocks: user.stocks,
+    });
   }
 
   const handleSell = (value) => {

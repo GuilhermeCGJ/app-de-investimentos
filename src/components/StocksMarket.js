@@ -89,11 +89,11 @@ export default function StocksMarket () {
       <div className="market-box">
         <div className="user-infos">
           <h3>{`Usuário: ${user.email}`}</h3>
-          <h3>{`Saldo: ${user.money}`}</h3>
+          <h3>{`Saldo: ${user.money.toFixed(2)}`}</h3>
         </div>
         <div className="stock-infos">
           <h3>{`Suas ações dessa empresa: ${invested.amount}`}</h3>
-          <h3>{`Valor investido nessa empresa: ${invested.value}`}</h3>
+          <h3>{`Valor investido nessa empresa: ${invested.value.toFixed(2)}`}</h3>
         </div>
         <div className='trade-title'>
           <h1>Comprar/Vender Ação</h1>
