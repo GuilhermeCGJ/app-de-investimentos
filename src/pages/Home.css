@@ -1,9 +1,10 @@
 #home {
   align-items: center;
   display: flex;
-  justify-content:  center;
+  justify-content: space-around;
   min-height: 100vh;
   flex-direction: column;
+  background-color: #395B64;
 }
 
 .infos {
@@ -18,11 +19,11 @@
 
 .info-box {
   border-radius: 10px;
-  background-color: rgb(199, 211, 192);
+  background-color: #E7F6F2;
 }
 
 .code-box {
-  background-color: yellowgreen;
+  background-color: #7bc6c9;
   font-weight: bold;
   margin-right: 2px;
   min-width: 70px;
@@ -30,7 +31,7 @@
 }
 
 .amount-box {
-  background-color: lightgray;
+  background-color: #A5C9CA;
   font-weight: bold;
   margin-right: 2px;
   min-width: 50px;
@@ -38,14 +39,14 @@
 }
 
 .value-box {
-  background-color: lightgreen;
+  background-color: #a5caab;
   font-weight: bold;
   min-width: 110px;
   width: 30vw;
 }
 
 .trade-box {
-  background-color: rgb(175, 185, 154);
+  background-color: #a9d1d3;
   font-weight: bold;
   margin-left: 2px;
   min-width: 90px;
@@ -53,23 +54,39 @@
 }
 
 .title {
-  background-color: darkgray;
+  background-color: #2C3333;
+  color: #E7F6F2;
   height: 2vh;
   margin-bottom: 1px;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
 }
 
 .stocks-area {
   max-height: 35vh;
   overflow: auto;
   text-align: center;
+  border-radius: 15px;
 }
 
 .stocks-view-area {
   height: 75vh;
 }
 
-#home-button {
-  margin-top: 20px;
+.home-button {
+  width: 200px;
+  height: 55px;
+  background-color: #A5C9CA;
+  border-radius: 5px;
+  border: none;
+}
+
+.home-button:hover {
+  width: 200px;
+  height: 55px;
+  background-color: #84d0d3;
+  border-radius: 5px;
+  border: none;
 }
 
 .stock-details {
@@ -91,20 +108,9 @@
   border-radius: 5px;
 }
 
-.trade-stock {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  margin-bottom: 1px;
-}
 
 .buy-wrapper {
   background-color: lightskyblue;
-  border-radius: 15px;
-}
-
-.sell-wrapper {
-  background-color: lightgreen;
   border-radius: 15px;
 }
 
@@ -116,6 +122,48 @@ input[type=number]::-webkit-outer-spin-button {
 
 input[type=number] {
   -moz-appearance: textfield;
+}
+
+.market-box {
+  position: relative;
+  width: 70%;
+  max-width: 400px;
+  margin: 0 auto;
+  height: auto;
+  max-height: 70vh;
+  margin-top: calc(100vh - 85vh - 20px);
+  background: #fff;
+  border-radius: 4px;
+  padding: 20px;
+  border: 1px solid #999;
+  overflow: auto;
+}
+
+.sell-wrapper {
+  background-color: lightgreen;
+  border-radius: 15px;
+}
+
+.stocks-view-area{
+  margin-top: 25px;
+  max-width: 500px;
+  min-width: 250px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  width: 95vw;
+  margin-bottom: 1px;
+  background-color: #E7F6F2;
+  border-radius: 15px;
+}
+
+.stock-market {
+  position: fixed;
+  background: #00000050;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
 }
 
 .trade-options input {
@@ -130,35 +178,11 @@ input[type=number] {
   border: 1px solid #eee;
 }
 
-.stocks-view-area{
-  max-width: 500px;
-  min-width: 250px;
-  width: 95vw;
+.trade-stock {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
   margin-bottom: 1px;
-}
-
-.stock-market {
-  position: fixed;
-  background: #00000050;
-  width: 100%;
-  height: 100vh;
-  top: 0;
-  left: 0;
-}
- 
-.market-box {
-  position: relative;
-  width: 70%;
-  max-width: 400px;
-  margin: 0 auto;
-  height: auto;
-  max-height: 70vh;
-  margin-top: calc(100vh - 85vh - 20px);
-  background: #fff;
-  border-radius: 4px;
-  padding: 20px;
-  border: 1px solid #999;
-  overflow: auto;
 }
 
 .user-infos {

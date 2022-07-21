@@ -179,16 +179,6 @@ function ExpProvider({ children }) {
     });
   };
 
-  const deleteInData = () => {
-    let newData = data;
-    newData = newData.filter(dataValue => {
-      return !myStocks.find((myStockValue)=>{
-        return dataValue.code === myStockValue.code
-      }) 
-     });
-    setData(newData);
-  };
-
   return (
     <ExpContext.Provider
       value={ {
@@ -207,7 +197,6 @@ function ExpProvider({ children }) {
         handleSell,
         storedInfos,
         updateLocalStorage,
-        deleteInData,
         invested,
         setInvested,
         updateInvestValue,

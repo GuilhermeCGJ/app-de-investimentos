@@ -3,4 +3,11 @@
   display: flex;
   justify-content:  center;
   flex-direction: column;
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  height: 5vh;
+  background-color: #A5C9CA;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
 }

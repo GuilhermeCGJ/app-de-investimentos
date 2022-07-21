@@ -20,7 +20,6 @@ export default function Home () {
     user,
     setUser,
     updateLocalStorage,
-    // deleteInData,
     } = useContext(ExpContext);
 
 
@@ -41,7 +40,6 @@ export default function Home () {
       money: user.money,
       stocks: myStocks,
     });
-    // deleteInData();
   }, [marketPopup]);
 
   const handleClick = () => {
@@ -54,17 +52,21 @@ export default function Home () {
       <Header />
       { marketPopup && <StocksMarket /> }
       <div className='stocks-view-area'>
-        <div className='title'>
-          <h5>Minhas Ações</h5>
+        <div className="my-stocks-area">
+          <div className='title'>
+            <h5>Minhas Ações</h5>
+          </div>
+          
+          { myStocks.length > 0 ? <><StocksHeader /> <MyStocksArea /></> : <div className='stocks-area'><h3> Você não tem ações </h3></div >}
         </div>
-        
-        { myStocks.length > 0 ? <><StocksHeader /> <MyStocksArea /></> : <div className='stocks-area'><h3> Você não tem ações </h3></div >}
-        
-        <div className='title'>
-          <h5>Disponíveis para investir</h5>
-        </div>
-        <StocksHeader />
-        <AvailableStocksArea />
+       <div className="available-stocks-area">
+          <div className='title'>
+            <h5>Disponíveis para investir</h5>
+          </div>
+          <StocksHeader />
+          <AvailableStocksArea />
+       </div>
+
       </div>
       <button
         className='home-button'
