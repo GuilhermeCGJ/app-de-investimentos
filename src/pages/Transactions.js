@@ -1,10 +1,10 @@
 import React from 'react';
-import Balance from '../components/Balance';
-import DepositAndWithdrawal from '../components/DepositAndWithdrawal';
+import Balance from '../components/Transactions/Balance';
+import DepositAndWithdrawal from '../components/Transactions/DepositAndWithdrawal';
 import { TiArrowBack } from 'react-icons/ti';
 import { useNavigate } from 'react-router-dom'
 import './Transactions.css'
-import Header from '../components/Header';
+import Header from '../components/All Pages/Header';
 
 export default function Transactions () {
   const navigate = useNavigate ();

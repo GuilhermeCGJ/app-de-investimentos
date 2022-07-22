@@ -1,6 +1,6 @@
-import React from 'react'
-import { useContext } from 'react'
-import ExpContext from '../context/ExpContext'
+import React from 'react';
+import { useContext } from 'react';
+import ExpContext from '../../context/ExpContext';
 
 export default function Balance () {
   const {

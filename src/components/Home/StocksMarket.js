@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useContext, useState } from 'react';
 import { IoIosCloseCircleOutline } from 'react-icons/io';
-import ExpContext from '../context/ExpContext';
+import ExpContext from '../../context/ExpContext';
 import Swal from 'sweetalert2';
 
 export default function StocksMarket () {

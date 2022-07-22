@@ -2,10 +2,10 @@ import React, { useEffect, useState } from 'react';
 import { useContext } from 'react';
 import ExpContext from '../context/ExpContext';
 import { TiArrowBack } from 'react-icons/ti';
-import logo from '../components/ExpLogo.png';
+import logo from '../components/Assets/ExpLogo.png';
 import { useNavigate  } from 'react-router-dom';
 import './UserArea.css';
-import Header from '../components/Header';
+import Header from '../components/All Pages/Header';
 
 export default function UserArea () {
   const navigate = useNavigate ();

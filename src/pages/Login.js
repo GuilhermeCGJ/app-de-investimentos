@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
-import LoginForm from '../components/LoginForm'
-import RememberLogin from '../components/RememberLogin';
-import logo from '../components/ExpLogo.png';
+import LoginForm from '../components/Login/LoginForm'
+import RememberLogin from '../components/Login/RememberLogin';
+import logo from '../components/Assets/ExpLogo.png';
 import './Login.css'
 
 export default function Login () {

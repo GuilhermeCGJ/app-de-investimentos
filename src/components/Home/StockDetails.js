@@ -1,6 +1,6 @@
-import React, { useContext } from 'react'
+import React, { useContext } from 'react';
 import { AiOutlineDown, AiOutlineUp } from 'react-icons/ai';
-import ExpContext from '../context/ExpContext';
+import ExpContext from '../../context/ExpContext';
 
 export default function StockDetails (props) {
   const { stockCode, stockName,

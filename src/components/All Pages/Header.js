@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate  } from 'react-router-dom';
-import logo from './ExpLogo.png';
+import logo from '../Assets/ExpLogo.png';
 import { FaUserAlt } from 'react-icons/fa';
 import './Header.css'
 

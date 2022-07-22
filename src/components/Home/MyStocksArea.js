@@ -1,5 +1,5 @@
-import React from 'react'
-import MyStocks from './MyStocks'
+import React from 'react';
+import MyStocks from './MyStocks';
 
 export default function MyStocksArea () {
 

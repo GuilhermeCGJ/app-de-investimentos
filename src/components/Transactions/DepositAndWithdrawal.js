@@ -1,7 +1,7 @@
-import React from 'react'
+import React from 'react';
 import { useState } from 'react';
 import { useContext } from 'react';
-import ExpContext from '../context/ExpContext';
+import ExpContext from '../../context/ExpContext';
 
 export default function DepositAndWithdrawal () {
   const {

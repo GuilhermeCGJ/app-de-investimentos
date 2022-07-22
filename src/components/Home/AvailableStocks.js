@@ -1,6 +1,6 @@
 import React from 'react'
 import StockDetails from './StockDetails'
-import ExpContext from '../context/ExpContext';
+import ExpContext from '../../context/ExpContext';
 import { useContext } from 'react';
 
 export default function AvailableStocks () {

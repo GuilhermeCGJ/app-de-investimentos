@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { useNavigate  } from 'react-router-dom';
 import { BsEye, BsEyeSlash } from 'react-icons/bs';
-import ExpContext from '../context/ExpContext';
+import ExpContext from '../../context/ExpContext';
 
 export default function LoginForm() {
   const {

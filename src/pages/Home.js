@@ -1,14 +1,13 @@
 import React from 'react'
 import { useEffect, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
-import AvailableStocksArea from '../components/AvailableStocksArea';
-import MyStocksArea from '../components/MyStocksArea';
-import StocksMarket from '../components/StocksMarket';
-import StocksHeader from '../components/StocksHeader';
+import AvailableStocksArea from '../components/Home/AvailableStocksArea';
+import MyStocksArea from '../components/Home/MyStocksArea';
+import StocksMarket from '../components/Home/StocksMarket';
+import StocksHeader from '../components/Home/StocksHeader';
 import ExpContext from '../context/ExpContext';
 import './Home.css';
-import Header from '../components/Header';
-import UserArea from './UserArea';
+import Header from '../components/All Pages/Header';
 
 export default function Home () {
 
