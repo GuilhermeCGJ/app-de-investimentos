@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useContext, useState } from 'react';
 import { IoIosCloseCircleOutline } from 'react-icons/io';
 import ExpContext from '../context/ExpContext';
+import Swal from 'sweetalert2';
 
 export default function StocksMarket () {
   const {
@@ -14,7 +15,6 @@ export default function StocksMarket () {
     handleBuy,
     handleSell,
     user,
-    myStocks,
   } = useContext(ExpContext);
   const [buy, setBuy] = useState({
     value: 0,
@@ -33,11 +33,6 @@ export default function StocksMarket () {
     updateInvestValue();
     updateAvailableAmount();
   }, []);
-
-  useEffect(() => {
-    console.log(myStocks);
-
-  }, [myStocks])
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -62,24 +57,61 @@ export default function StocksMarket () {
     if ( buy.wasTouched ) {
       const expense = parseFloat(buy.value) * parseFloat(marketStock.value);
       if (buy.value > toBuy) {
-        alert('Não há essa quantidade de ações para serem compradas');
+        Swal.fire({
+          title: 'Erro!',
+          text: 'Não há essa quantidade de ações para serem compradas',
+          icon: 'error',
+          confirmButtonText: 'Tentar Novamente'
+        });
       } else if ( expense > user.money) {
-        alert('Saldo insuficiente');
+        Swal.fire({
+          title: 'Erro!',
+          text: 'Saldo insuficiente',
+          icon: 'error',
+          confirmButtonText: 'Tentar Novamente'
+        });
       } else if (buy.value < 0) {
-        alert('Valores incorretos');
+        Swal.fire({
+          title: 'Erro!',
+          text: 'Valores Incorretos',
+          icon: 'error',
+          confirmButtonText: 'Tentar Novamente'
+        });
       } else {
+        Swal.fire({
+          title: 'Sucesso!',
+          text: 'Compra realizada',
+          icon: 'sucess',
+          confirmButtonText: 'Continuar'
+        });
         handleBuy(buy.value);
         setMarketPopup(false);
       }
     } else if ( sell.wasTouched ) {
       if (sell.value > invested.amount) {
-        alert('Você não tem essa quantidade de ações para vender');
+        Swal.fire({
+          title: 'Erro!',
+          text: 'Você não tem essa quantidade de ações para vender',
+          icon: 'error',
+          confirmButtonText: 'Tentar Novamente'
+        });
       } else {
+        Swal.fire({
+          title: 'Sucesso!',
+          text: 'Venda realizada',
+          icon: 'sucess',
+          confirmButtonText: 'Continuar'
+        });
         handleSell(sell.value);
         setMarketPopup(false);
       }
     } else {
-      alert('Você não selecionou nenhuma transação');
+      Swal.fire({
+        title: 'Algo de Errado!',
+        text: 'Você não selecionou nenhuma transação',
+        icon: 'question',
+        confirmButtonText: 'Tentar Novamente'
+      });
     }
   };
 
@@ -97,12 +129,24 @@ export default function StocksMarket () {
           onClick={handleClose}
         />
         <div className="user-infos" >
-          <h3>{`Usuário: ${user.email}`}</h3>
-          <h3>{`Saldo: ${user.money.toFixed(2)}`}</h3>
+          <div>
+            <h4>{`Usuário:`}</h4>
+            <h5>{`${user.email}`}</h5>
+          </div>
+          <div>
+            <h4>{`Saldo:`}</h4>
+            <h5>{`R$${user.money.toFixed(2)}`}</h5>
+          </div>
         </div>
         <div className="stock-infos">
-          <h3>{`Ações: ${invested.amount}`}</h3>
-          <h3>{`Investimento: ${invested.value.toFixed(2)}`}</h3>
+          <div>
+            <h4>{`Ações dessa empresa:`}</h4>
+            <h5>{`${invested.amount}`}</h5>
+          </div>
+          <div>
+            <h4>{`Investimento:`}</h4>
+            <h5>{`R$${invested.value.toFixed(2)}`}</h5>
+          </div>
         </div>
         <div className='trade-title'>
           <h1>Comprar/Vender Ação</h1>
@@ -156,6 +200,8 @@ export default function StocksMarket () {
               <p className="text-box buy-sell">Vender </p>
             </label>
           </fieldset>
+          { buy.wasTouched && <h4>{`Valor total: R$${(buy.value * marketStock.value).toFixed(2)}`} </h4>}
+          { sell.wasTouched && <h4>{`Valor total: R$${(sell.value * marketStock.value).toFixed(2)}`} </h4>}
         </div>
         <div className='buttons-area'>
           <button

@@ -14,7 +14,7 @@ export default function Header () {
     <div id='header'>
       <div className='header'>
         <img src={logo} alt="logo" className="header-logo" />
-        <FaUserAlt onClick={handleProfile} />
+        <FaUserAlt className="profile-symbol" onClick={handleProfile} />
       </div>
     </div>
   )

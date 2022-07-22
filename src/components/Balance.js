@@ -11,7 +11,7 @@ export default function Balance () {
     <div id='balance'>
       <h3>{`Saldo em Conta: `}</h3>
       { ' ' }
-      <h2>{` R$ ${ user.money }`}</h2>
+      <h3>{` R$ ${ user.money }`}</h3>
     </div>
   )
 }

@@ -5,6 +5,7 @@ import { TiArrowBack } from 'react-icons/ti';
 import logo from '../components/ExpLogo.png';
 import { useNavigate  } from 'react-router-dom';
 import './UserArea.css';
+import Header from '../components/Header';
 
 export default function UserArea () {
   const navigate = useNavigate ();
@@ -31,11 +32,11 @@ export default function UserArea () {
 
   return (
     <div id='user-area'>
-      
+      <Header />
       <TiArrowBack
           className="return-icon"
           size={50}
-          color="#E7F6F2"
+          color="#2C3333"
           onClick= { handleReturn }
         />
       <img src={logo} alt="logo" />
