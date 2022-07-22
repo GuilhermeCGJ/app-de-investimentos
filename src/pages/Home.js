@@ -54,14 +54,14 @@ export default function Home () {
       { marketPopup && <StocksMarket /> }
       <div className='stocks-view-area'>
         <div className="my-stocks-area">
-          <div className='title'>
+          <div className='title text-box'>
             <h5>Minhas Ações</h5>
           </div>
           
           { myStocks.length > 0 ? <><StocksHeader /> <MyStocksArea /></> : <div className='stocks-area'><h3> Você não tem ações </h3></div >}
         </div>
        <div className="available-stocks-area">
-          <div className='title'>
+          <div className='title  text-box'>
             <h5>Disponíveis para investir</h5>
           </div>
           <StocksHeader />

@@ -122,7 +122,12 @@ export default function DepositAndWithdrawal () {
           name="transaction"
           onClick={ handleChoose }
         />
-        <label htmlFor="deposit">Depositar</label>
+        <label
+          htmlFor="deposit"
+          className="text-box"
+        >
+          Depositar
+        </label>
         </div>
         <div className="withdrawal">
         <input
@@ -131,7 +136,12 @@ export default function DepositAndWithdrawal () {
           name="transaction"
           onClick={ handleChoose }
         />
-        <label htmlFor="withdrawal">Sacar</label>
+        <label
+          htmlFor="withdrawal"
+          className="text-box"
+        >
+          Sacar
+        </label>
         </div>
       </div>
       <fieldset className='money-wrapper'>

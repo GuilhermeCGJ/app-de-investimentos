@@ -98,11 +98,11 @@ export default function LoginForm() {
               onChange={handleChange}
             />
             
-            {showPassword ? <BsEyeSlash
+            {showPassword ? <BsEye
               className="show-password-input"
               onClick={(e) => setShowPassword(!showPassword)}
             /> :
-            <BsEye
+            <BsEyeSlash
               className="show-password-input"
               onClick={(e) => setShowPassword(!showPassword)}
             />

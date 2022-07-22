@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useContext, useState } from 'react';
+import { IoIosCloseCircleOutline } from 'react-icons/io';
 import ExpContext from '../context/ExpContext';
 
 export default function StocksMarket () {
@@ -68,12 +69,14 @@ export default function StocksMarket () {
         alert('Valores incorretos');
       } else {
         handleBuy(buy.value);
+        setMarketPopup(false);
       }
     } else if ( sell.wasTouched ) {
       if (sell.value > invested.amount) {
         alert('Você não tem essa quantidade de ações para vender');
       } else {
         handleSell(sell.value);
+        setMarketPopup(false);
       }
     } else {
       alert('Você não selecionou nenhuma transação');
@@ -87,13 +90,19 @@ export default function StocksMarket () {
   return (
     <div className="stock-market">
       <div className="market-box">
-        <div className="user-infos">
+        <IoIosCloseCircleOutline
+          color="red"
+          size={30}
+          className="close-x"
+          onClick={handleClose}
+        />
+        <div className="user-infos" >
           <h3>{`Usuário: ${user.email}`}</h3>
           <h3>{`Saldo: ${user.money.toFixed(2)}`}</h3>
         </div>
         <div className="stock-infos">
-          <h3>{`Ações dessa empresa: ${invested.amount}`}</h3>
-          <h3>{`Montante investido: ${invested.value.toFixed(2)}`}</h3>
+          <h3>{`Ações: ${invested.amount}`}</h3>
+          <h3>{`Investimento: ${invested.value.toFixed(2)}`}</h3>
         </div>
         <div className='trade-title'>
           <h1>Comprar/Vender Ação</h1>
@@ -101,24 +110,24 @@ export default function StocksMarket () {
         <div>
           <div className='stocks-header'>
             <div className='info-box code-box bg-gray'> 
-              <p> Código </p>
+              <p className="text-box"> Código </p>
             </div>
             <div className='info-box amount-box bg-gray'> 
-              <p> Qtde </p>
+              <p className="text-box"> Qtde </p>
             </div>
             <div className='info-box value-box bg-gray'> 
-              <p> Valor (R$) </p>
+              <p className="text-box"> Valor (R$) </p>
             </div>
           </div>
           <div className='trade-stock'>
             <div className='info-box code-box'> 
-              <p> {marketStock.code} </p>
+              <p className="text-box"> {marketStock.code} </p>
             </div>
             <div className='info-box amount-box'> 
-              <p> {toBuy} </p>
+              <p className="text-box"> {toBuy} </p>
             </div>
             <div className='info-box value-box'> 
-              <p> {marketStock.value} </p>
+              <p className="text-box"> {marketStock.value} </p>
             </div>
           </div>
         </div>
@@ -132,7 +141,7 @@ export default function StocksMarket () {
                 onChange={handleChange}
                 disabled={sell.wasTouched}
               />
-              <p>Comprar </p>
+              <p className="text-box buy-sell">Comprar </p>
             </label>
           </fieldset>
           <fieldset className='sell-wrapper'>
@@ -144,19 +153,14 @@ export default function StocksMarket () {
                 onChange={handleChange}
                 disabled={buy.wasTouched}
               />
-              <p>Vender </p>
+              <p className="text-box buy-sell">Vender </p>
             </label>
           </fieldset>
         </div>
         <div className='buttons-area'>
           <button
             type='button'
-            onClick={handleClose}
-          >
-            Voltar
-          </button>
-          <button
-            type='button'
+            className="confirm-button"
             onClick={handleSubmit}
           >
             Confirmar

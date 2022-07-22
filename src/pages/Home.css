@@ -110,22 +110,14 @@
 
 
 .buy-wrapper {
-  background-color: rgb(250, 135, 135);
+  background-color: #A5C9CA;
   border-radius: 15px;
   text-align: center;
   justify-content: center;
   align-items: center;
 }
 
-input[type=number]::-webkit-inner-spin-button,
-input[type=number]::-webkit-outer-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
 
-input[type=number] {
-  -moz-appearance: textfield;
-}
 
 .market-box {
   position: relative;
@@ -146,7 +138,7 @@ input[type=number] {
 }
 
 .sell-wrapper {
-  background-color: lightgreen;
+  background-color: #A5C9CA;
   border-radius: 15px;
 }
 
@@ -194,19 +186,25 @@ input[type=number] {
 .user-infos {
   display: flex;
   flex-direction: row;
+  justify-content: space-around;
+  align-self: center;
+  width: 80vw;
   background-color: #A5C9CA;
   border-radius: 15px;
   height: 5vh;
-  padding-top: 5px;
+  padding-top: 15px;
 }
 
 .stock-infos {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: space-around;
+  align-self: center;
+  width: 80vw;
   background-color: #A5C9CA;
   border-radius: 15px;
   height: 5vh;
-  padding-top: 5px;
+  padding-top: 15px;
 }
 
 .user-area {
@@ -234,4 +232,30 @@ input[type=number] {
   padding: 20px;
   border: 1px solid rgb(114, 114, 114);
   overflow: auto;
+}
+
+.buy-sell {
+  align-items: center;
+  height: 30px;
+  color: #E7F6F2;
+  margin-top: 5px;
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+.trade-title {
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: bolder;
+}
+
+.close-x {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.buttons-area {
+  display: flex;
+  justify-content: center;
 }
