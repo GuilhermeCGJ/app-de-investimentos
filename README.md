@@ -18,7 +18,7 @@
 
 ## 💻 Sobre o projeto
 
-🚀 Experience - é umaplicativo de investimento em ações, com algumas funcionalidades de conta digita.
+🚀 Experience - é um aplicativo de investimento em ações, com algumas funcionalidades de conta digita.
 
 
 Projeto desenvolvido durante um desafio técnico para uma empresa do ramo financeiro.
