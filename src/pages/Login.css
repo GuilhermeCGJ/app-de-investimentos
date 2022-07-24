@@ -22,6 +22,16 @@
   width: 80vw;
 }
 
+#remember {
+  flex: 1;
+  margin-right: 4px;
+}
+
+a {
+  color: #395B64;
+  text-decoration: none;
+}
+
 form {
   background-color: #E7F6F2;
   border-radius: 15px;
@@ -40,6 +50,12 @@ fieldset {
   padding: 0;
 }
 
+img{
+  width: 250px;
+  margin-top: 5vh;
+  margin-bottom: 5vh;
+}
+
 input {
   background-color: aliceblue;
   border-radius: 5px;
@@ -53,10 +69,6 @@ input::placeholder {
   color: rgb(89, 90, 90);
 }
 
-small {
-  color: #395B64;
-}
-
 .login-button {
   background-color: #2C3333;
   border: none;
@@ -68,20 +80,8 @@ small {
   width: 100%;
 }
 
-a {
-  color: #395B64;
-  text-decoration: none;
-}
-
 .password-wrapper {
   position: relative;
-}
-
-.show-password-input {
-  position: absolute;
-  top: 12px;
-  right: 12px;
-  width: 20px;
 }
 
 .remember-wrapper {
@@ -96,13 +96,13 @@ a {
   font-size: 14px;
 }
 
-#remember {
-  flex: 1;
-  margin-right: 4px;
+small {
+  color: #395B64;
 }
 
-img{
-  width: 250px;
-  margin-top: 5vh;
-  margin-bottom: 5vh;
+.show-password-input {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 20px;
 }

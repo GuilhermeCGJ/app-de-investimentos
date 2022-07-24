@@ -7,71 +7,34 @@
   background-color: #395B64;
 }
 
-.infos {
+.buttons-area {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  max-width: 500px;
-  min-width: 250px;
-  width: 95vw;
-  margin-bottom: 1px;
+  justify-content: center;
 }
 
-.info-box {
-  border-radius: 10px;
-  background-color: #E7F6F2;
-}
-
-.code-box {
-  background-color: #7bc6c9;
-  font-weight: bold;
-  margin-right: 2px;
-  min-width: 70px;
-  width: 20vw;
-}
-
-.amount-box {
-  background-color: #A5C9CA;
-  font-weight: bold;
-  margin-right: 2px;
-  min-width: 50px;
-  width: 10vw;
-}
-
-.value-box {
-  background-color: #a5caab;
-  font-weight: bold;
-  min-width: 110px;
-  width: 30vw;
-}
-
-.trade-box {
-  background-color: #a9d1d3;
-  font-weight: bold;
-  margin-left: 2px;
-  min-width: 90px;
-  width: 30vw;
-}
-
-.title {
-  background-color: #2C3333;
+.buy-sell {
+  align-items: center;
+  height: 30px;
   color: #E7F6F2;
-  height: 2vh;
-  margin-bottom: 1px;
-  border-top-left-radius: 15px;
-  border-top-right-radius: 15px;
+  margin-top: 5px;
+  font-weight: bold;
+  font-size: 2rem;
 }
 
-.stocks-area {
-  max-height: 35vh;
-  overflow: auto;
-  text-align: center;
+.buy-wrapper {
+  background-color: #A5C9CA;
   border-radius: 15px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
 }
 
-.stocks-view-area {
-  height: 75vh;
+.close-x {
+  position: absolute;
+  top: 0;
+  right: 0;
 }
+
 
 .home-button {
   width: 200px;
@@ -89,34 +52,15 @@
   border: none;
 }
 
-.stock-details {
+.infos {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
+  max-width: 500px;
+  min-width: 250px;
+  width: 95vw;
   margin-bottom: 1px;
 }
-
-.stocks-header {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  margin-bottom: 3px;
-}
-
-.bg-gray {
-  background-color: lightgray;
-  border-radius: 5px;
-}
-
-
-.buy-wrapper {
-  background-color: #A5C9CA;
-  border-radius: 15px;
-  text-align: center;
-  justify-content: center;
-  align-items: center;
-}
-
 
 
 .market-box {
@@ -162,6 +106,31 @@
   height: 100vh;
   top: 0;
   left: 0;
+}
+
+.stocks-area {
+  max-height: 35vh;
+  overflow: auto;
+  text-align: center;
+  border-radius: 15px;
+}
+
+.stocks-view-area {
+  height: 75vh;
+}
+
+.stock-details {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-bottom: 1px;
+}
+
+.stocks-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-bottom: 3px;
 }
 
 .trade-options input {
@@ -234,28 +203,62 @@
   overflow: auto;
 }
 
-.buy-sell {
-  align-items: center;
-  height: 30px;
-  color: #E7F6F2;
-  margin-top: 5px;
-  font-weight: bold;
-  font-size: 2rem;
-}
-
 .trade-title {
   text-align: center;
   font-size: 1.2rem;
   font-weight: bolder;
 }
 
-.close-x {
-  position: absolute;
-  top: 0;
-  right: 0;
+.title {
+  background-color: #2C3333;
+  color: #E7F6F2;
+  height: 2vh;
+  margin-bottom: 1px;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
 }
 
-.buttons-area {
-  display: flex;
-  justify-content: center;
+
+
+/* Css das informações das ações */
+
+.info-box {
+  border-radius: 10px;
+  background-color: #E7F6F2;
+}
+
+.code-box {
+  background-color: #7bc6c9;
+  font-weight: bold;
+  margin-right: 2px;
+  min-width: 70px;
+  width: 20vw;
+}
+
+.amount-box {
+  background-color: #A5C9CA;
+  font-weight: bold;
+  margin-right: 2px;
+  min-width: 50px;
+  width: 10vw;
+}
+
+.trade-box {
+  background-color: #a9d1d3;
+  font-weight: bold;
+  margin-left: 2px;
+  min-width: 90px;
+  width: 30vw;
+}
+
+.value-box {
+  background-color: #a5caab;
+  font-weight: bold;
+  min-width: 110px;
+  width: 30vw;
+}
+
+.bg-gray {
+  background-color: lightgray;
+  border-radius: 5px;
 }

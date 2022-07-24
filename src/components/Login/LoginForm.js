@@ -24,12 +24,12 @@ export default function LoginForm() {
   const [remember, setRemember] = useState(false);
 
   const validateEmail = (email) => {
-    const regex = /^(.+)@(.+)$/;
+    const regex = /^[\w-\.]+@([\w-]+\.)+[\w-]/; // Verifica se o email tem o format 'x@x.x'
     return regex.test(email);
   };
 
   const validatePassword = (password) => {
-    if (password.length < 6) {
+    if (password.length < 8) { // verifica se a senha tem pelo menos 8 caracteres
       return false;
     }
     return true;
@@ -49,12 +49,12 @@ export default function LoginForm() {
       const isPasswordValid = validatePassword(value);
       setPassword({
         value,
-        error: !isPasswordValid ? 'A senha deve ter pelo menos 6 caracteres' : '',
+        error: !isPasswordValid ? 'A senha deve ter pelo menos 8 caracteres' : '',
         hasError: !isPasswordValid,
         wasTouched: true,
       });
     }
-    }
+  }
 
     const handleSubmit = () => {
       if (email.hasError || password.hasError) {
@@ -87,6 +87,7 @@ export default function LoginForm() {
               onChange={handleChange}
             />
             <br />
+            {/* Aviso de erro, caso exista */}
             {email.wasTouched && email.hasError && <small>{email.error}</small>}
           </fieldset>
           <fieldset className='password-wrapper'>
@@ -108,6 +109,7 @@ export default function LoginForm() {
             />
             }
             <br />
+            {/* Aviso de erro, caso exista */}
             {password.wasTouched && password.hasError && <small>{password.error}</small>}
           </fieldset>
           <fieldset className='remember-wrapper'>

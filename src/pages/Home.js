@@ -25,12 +25,12 @@ export default function Home () {
 
 
   useEffect(() => {
-    getData();
-    storedInfos();
+    getData(); // Trás as informações da API para o estado local
+    storedInfos(); // Verifica as informações de usuário salvas no Local Storage
   }, []);
 
   useEffect(() => {
-    updateLocalStorage();
+    updateLocalStorage(); // Atualiza os dados no local storage
   }, [user]);
 
   useEffect(() => {
@@ -56,7 +56,7 @@ export default function Home () {
           <div className='title text-box'>
             <h5>Minhas Ações</h5>
           </div>
-          
+          {/* Caso tenha ações na carteira, renderiza elas, caso não, mostra mensagem */}
           { myStocks.length > 0 ? <><StocksHeader /> <MyStocksArea /></> : <div className='stocks-area'><h3> Você não tem ações </h3></div >}
         </div>
        <div className="available-stocks-area">

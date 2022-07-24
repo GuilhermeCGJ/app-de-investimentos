@@ -29,13 +29,12 @@ export default function DepositAndWithdrawal () {
   }
 
   const handleChoose = (e) => {
-    const { id } = e.target;
-    console.log(id);
-    setChoosed(id);
+    const { id } = e.target; // Verifica qual opção foi clicada
+    setChoosed(id); // Colore a opção clicada
   };
 
-  const validateWithdraw = () => {
-    if ( parseFloat(typedValue.money) > parseFloat(user.money) ) {
+  const validateWithdraw = () => { // Validação do Saque
+    if ( parseFloat(typedValue.money) > parseFloat(user.money) ) { //Verifica se o usuário tem saldo o suficiente
       setTypedValue ({
         money: 0,
         error: 'Você não tem saldo suficiente',
@@ -43,7 +42,7 @@ export default function DepositAndWithdrawal () {
         wasTouched: true,
       });
       return false;
-    } else if ( parseFloat(typedValue.money) <= 0) {
+    } else if ( parseFloat(typedValue.money) <= 0) { //Verifica se o valor não é negativo
       setTypedValue ({
         money: 0,
         error: 'Valor inválido',
@@ -56,8 +55,8 @@ export default function DepositAndWithdrawal () {
     }
   };
 
-  const validateDeposit = () => {
-    if ( parseFloat(typedValue.money) <= 0) {
+  const validateDeposit = () => { // Validação do Deposito
+    if ( parseFloat(typedValue.money) <= 0) { //Verifica se o valor não é negativo
       setTypedValue ({
         money: 0,
         error: 'Valor inválido',
@@ -72,8 +71,8 @@ export default function DepositAndWithdrawal () {
 
   const handleConfirm = () => {
     if (choosed === 'deposit') {
-      const deposit = parseFloat(user.money) + parseFloat(typedValue.money);
-      const approved = validateDeposit();
+      const deposit = parseFloat(user.money) + parseFloat(typedValue.money); //Novo saldo se o depósito for confirmado
+      const approved = validateDeposit(); //Valida o depósito
       if ( approved ) {
         setUser({
           email: user.email,
@@ -87,11 +86,11 @@ export default function DepositAndWithdrawal () {
           hasError: false,
           wasTouched: false,
         });
-        setChoosed('');
+        setChoosed(''); //Zera a transação escolhida
       }
     } else if (choosed === 'withdrawal') {
-      const withdrawal = parseFloat(user.money) - parseFloat(typedValue.money);
-      const approved = validateWithdraw();
+      const withdrawal = parseFloat(user.money) - parseFloat(typedValue.money); //Novo saldo se o saque for confirmado
+      const approved = validateWithdraw(); //Valida o saque
       if ( approved ) {
         setUser({
           email: user.email,
@@ -105,7 +104,7 @@ export default function DepositAndWithdrawal () {
           hasError: false,
           wasTouched: false,
         });
-        setChoosed('');
+        setChoosed(''); //Zera a transação escolhida
       }
       
     }
@@ -155,7 +154,8 @@ export default function DepositAndWithdrawal () {
           <p>R$ </p>
         </label>
       </fieldset>
-      {typedValue.hasError && <small>{typedValue.error}</small>}
+      {/* Aviso de erro, caso exista */}
+      {typedValue.hasError && <small>{typedValue.error}</small>} 
       <button
         type='button'
         className="confirm-button"

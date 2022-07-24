@@ -29,9 +29,9 @@ export default function StocksMarket () {
     wasTouched: false,
   });
 
-  useEffect(() => {
-    updateInvestValue();
-    updateAvailableAmount();
+  useEffect(() => { //Ao abrir o PopUp
+    updateInvestValue(); // calcula o valor investido em ações dessa empresa
+    updateAvailableAmount(); // verifica se houve atualização na quantidade de ações que há para serem compradas
   }, []);
 
   const handleChange = (e) => {
@@ -54,23 +54,23 @@ export default function StocksMarket () {
   }
 
   const handleSubmit = () => {
-    if ( buy.wasTouched ) {
-      const expense = parseFloat(buy.value) * parseFloat(marketStock.value);
-      if (buy.value > toBuy) {
+    if ( buy.wasTouched ) { // Verifica se a opção de compra que foi escolhida
+      const expense = parseFloat(buy.value) * parseFloat(marketStock.value); // Valor total a ser gasto se confirmar a compra das aões
+      if (buy.value > toBuy) { // Verifica se tem ações o suficiente pra serem compradas
         Swal.fire({
           title: 'Erro!',
           text: 'Não há essa quantidade de ações para serem compradas',
           icon: 'error',
           confirmButtonText: 'Tentar Novamente'
         });
-      } else if ( expense > user.money) {
+      } else if ( expense > user.money) { // Verifica se o usuário tem dinheiro pra comprar essas ações
         Swal.fire({
           title: 'Erro!',
           text: 'Saldo insuficiente',
           icon: 'error',
           confirmButtonText: 'Tentar Novamente'
         });
-      } else if (buy.value < 0) {
+      } else if (buy.value < 0) { // Verifica se o usuário não digitou um valor negativo
         Swal.fire({
           title: 'Erro!',
           text: 'Valores Incorretos',
@@ -78,17 +78,17 @@ export default function StocksMarket () {
           confirmButtonText: 'Tentar Novamente'
         });
       } else {
-        Swal.fire({
+        Swal.fire({ // Sucesso na compra
           title: 'Sucesso!',
           text: 'Compra realizada',
           icon: 'sucess',
           confirmButtonText: 'Continuar'
         });
-        handleBuy(buy.value);
-        setMarketPopup(false);
+        handleBuy(buy.value); // Realiza a baixa das ações a venda  e coloca a nova ação na carteira do usuário, descontando o preço pago por elas de sua conta
+        setMarketPopup(false); // Fecha o PopUp
       }
-    } else if ( sell.wasTouched ) {
-      if (sell.value > invested.amount) {
+    } else if ( sell.wasTouched ) { // Verifica se a opção de venda foi a selecionada
+      if (sell.value > invested.amount) { // Verifica se o usuário tem essa quantidade de ações para serem vendidas
         Swal.fire({
           title: 'Erro!',
           text: 'Você não tem essa quantidade de ações para vender',
@@ -96,16 +96,16 @@ export default function StocksMarket () {
           confirmButtonText: 'Tentar Novamente'
         });
       } else {
-        Swal.fire({
+        Swal.fire({ // Sucesso na venda
           title: 'Sucesso!',
           text: 'Venda realizada',
           icon: 'sucess',
           confirmButtonText: 'Continuar'
         });
-        handleSell(sell.value);
-        setMarketPopup(false);
+        handleSell(sell.value); // Adiciona o valor da venda no saldo do usuário e diminui a quantidade de ações em sua carteira
+        setMarketPopup(false);// Fecha o PopUp
       }
-    } else {
+    } else { // Caso nenhum valor tenha sido digitado em compra ou venda
       Swal.fire({
         title: 'Algo de Errado!',
         text: 'Você não selecionou nenhuma transação',
@@ -115,7 +115,7 @@ export default function StocksMarket () {
     }
   };
 
-  const handleClose = () => {
+  const handleClose = () => { // Fecha o PopUp se clicar no X
     setMarketPopup(false);
   };
 
@@ -140,7 +140,7 @@ export default function StocksMarket () {
         </div>
         <div className="stock-infos">
           <div>
-            <h4>{`Ações dessa empresa:`}</h4>
+            <h4>{`Ações da empresa:`}</h4>
             <h5>{`${invested.amount}`}</h5>
           </div>
           <div>

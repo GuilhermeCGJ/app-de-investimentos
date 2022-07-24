@@ -1,33 +1,33 @@
 #header {
   align-items: center;
-  display: flex;
-  justify-content:  center;
-  flex-direction: row;
-  position: absolute;
-  top: 0;
-  width: 100vw;
-  height: 5vh;
   background-color: #A5C9CA;
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
+  display: flex;
+  flex-direction: row;
+  height: 5vh;
+  justify-content:  center;
+  position: absolute;
+  top: 0;
+  width: 100vw;
 }
 
 .header {
   align-items: center;
   display: flex;
-  justify-content:  space-around;
   flex-direction: row;
+  justify-content:  space-around;
   width: 100vw;
 }
 
 .header-logo{
+  margin-top: 5vh;
   position: absolute;
   width: 85px;
-  margin-top: 5vh;
 }
 
 .profile-symbol{
+  margin-right: 4vw;
   position: absolute;
   right: 0;
-  margin-right: 4vw;
 }
