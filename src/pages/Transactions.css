@@ -53,14 +53,21 @@
   z-index: 100;
 }
 
-.deposit input[type="radio"]:checked+label,
-.Checked+label {
-  background: yellow;
+
+.confirm-button {
+  width: 200px;
+  height: 55px;
+  background-color: #84d0d3;
+  border-radius: 5px;
+  border: none;
 }
 
-.withdrawal input[type="radio"]:checked+label,
-.Checked+label {
-  background: greenyellow;
+.confirm-button:hover {
+  width: 200px;
+  height: 55px;
+  background-color: #64bfc2;
+  border-radius: 5px;
+  border: none;
 }
 
 .choose-transaction label {
@@ -72,6 +79,11 @@
 
 .choose-transaction label:hover {
   background: #A5C9CA;
+}
+
+.deposit input[type="radio"]:checked+label,
+.Checked+label {
+  background: yellow;
 }
 
 .money-wrapper {
@@ -91,6 +103,12 @@
   left: 5px;
 }
 
+.return-icon {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
 .transactions-box {
   background-color: #E7F6F2;
   width: 95vw;
@@ -101,24 +119,7 @@
   border-radius: 15px;
 }
 
-.return-icon {
-  position: absolute;
-  left: 0;
-  top: 0;
-}
-
-.confirm-button {
-  width: 200px;
-  height: 55px;
-  background-color: #84d0d3;
-  border-radius: 5px;
-  border: none;
-}
-
-.confirm-button:hover {
-  width: 200px;
-  height: 55px;
-  background-color: #64bfc2;
-  border-radius: 5px;
-  border: none;
+.withdrawal input[type="radio"]:checked+label,
+.Checked+label {
+  background: greenyellow;
 }
